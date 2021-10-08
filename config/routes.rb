@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :bloggers,  controllers: { sessions: 'bloggers/sessions', registrations: "bloggers/registrations" } 
+  devise_for :bloggers
   root 'pages#home'
   get 'about', to: 'pages#about'
  
@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get'signup' ,to: 'users#new'
   
   resources :users, except: [:new]
-  resources :bloggers
 
 
   
