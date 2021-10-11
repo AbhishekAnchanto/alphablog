@@ -9,7 +9,7 @@ end
 
 def index
 
-    @articles=Article.all
+  @articles = Article.paginate(page: params[:page], per_page: 5)
 end
 
 def new
@@ -32,7 +32,7 @@ def create
 
     #render plain: params[:article]
     @article= Article.new(params.require(:article).permit(:title, :description))
-    @article.user=User.first
+    @article.blogger=current_blogger
     #render plain: @article
     #render plain: @article.inspect
     if @article.save   #redirect_to article_path(@article)
