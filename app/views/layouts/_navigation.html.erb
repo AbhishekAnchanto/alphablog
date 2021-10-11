@@ -15,6 +15,8 @@
             
             </li>
             <li class="nav-item dropdown">
+             <% if blogger_signed_in? %>
+
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Articles
               </a>
@@ -22,16 +24,17 @@
                 <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
                 <%= link_to "View articles", articles_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <%= link_to "Home", root_path, class: "dropdown-item" %>
               </div>
             </li>
+            <%end%>
             
             <li class="nav-item">
             <% if blogger_signed_in? %>
-            <%= link_to 'sign_out' , destroy_blogger_session_path, class: "nav-link" ,method: :delete %>
+            <%= link_to 'sign out' , destroy_blogger_session_path, class: "nav-link" ,method: :delete %>
             <%else%>
 
-            <%=   link_to 'sign_in' ,  new_blogger_session_path, class: "nav-link", method: :post %>
+            <%=   link_to 'sign in ' ,  new_blogger_session_path, class: "nav-link", method: :post %>
             <%end%>
             <% if blogger_signed_in? %>
             <li class="nav-item dropdown">
@@ -44,7 +47,7 @@
           <%= link_to "Edit Profile", edit_blogger_registration_path, class: "dropdown-item" %> 
           <%= link_to "Create Article", new_article_path, class: "dropdown-item" %> 
           <%= link_to "Sign out", destroy_blogger_session_path, class: "dropdown-item", method: :delete%> 
-          <%= link_to "Delete profile", blogger_path(current_blogger), class: "dropdown-item text-danger", method: :delete,data: {confirm: "Are you sure?"} %>
+        
 
               </div>
             </li>
