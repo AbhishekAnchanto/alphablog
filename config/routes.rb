@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :bloggers , only: [:show ,:index]
 
+  resources :comments, only: [:new,:create]
+
   
    
   

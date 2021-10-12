@@ -3,7 +3,7 @@
 .navbar {
     background-color: black!important;
   } 
-
+  
   .nav-link
   {
         color: white !important;
@@ -21,7 +21,6 @@
 
 
   }
-
   #home-container{
 
       margin-top: 25px;
@@ -35,9 +34,9 @@
      height: 425px;
   }
 
-  html,
-body {
-  height: 100%;
+ html,
+    body {
+    height: 100%;
 }
 
 #page-content {
@@ -48,8 +47,6 @@ body {
 #sticky-footer {
   flex-shrink: none;
 } 
-
-/* pagination styling */
 
 .flickr_pagination {
   text-align: center;
